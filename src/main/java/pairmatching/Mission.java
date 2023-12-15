@@ -22,10 +22,14 @@ public enum Mission {
         this.index = index;
     }
 
-    public Mission getMission(String missionName) {
+    public Level getLevel() {
+        return level;
+    }
+
+    public static Mission getMission(String missionName) {
         return Arrays.stream(values())
                 .filter(mission -> mission.missionName.equals(missionName))
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("[ERROR] 과정, 레벨, 미션을 잘못 입력하셨습니다. 다시 입력해주세요."));
+                .orElseThrow(() -> new InputException(ErrorMessage.MISSION_IS_NOT_VALID));
     }
 }

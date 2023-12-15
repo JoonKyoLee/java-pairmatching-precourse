@@ -26,6 +26,6 @@ public enum Course {
         return Arrays.stream(values())
                 .filter(course -> course.courseName.equals(courseName))
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("[ERROR] 과정, 레벨, 미션을 잘못 입력하셨습니다. 다시 입력해주세요."));
+                .orElseThrow(() -> new InputException(ErrorMessage.COURSE_IS_NOT_VALID));
     }
 }

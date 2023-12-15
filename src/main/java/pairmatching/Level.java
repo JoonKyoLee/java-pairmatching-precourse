@@ -35,6 +35,6 @@ public enum Level {
         return Arrays.stream(values())
                 .filter(level -> level.levelName.equals(levelName))
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("[ERROR] 과정, 레벨, 미션을 잘못 입력하셨습니다. 다시 입력해주세요."));
+                .orElseThrow(() -> new InputException(ErrorMessage.LEVEL_IS_NOT_VALID));
     }
 }
