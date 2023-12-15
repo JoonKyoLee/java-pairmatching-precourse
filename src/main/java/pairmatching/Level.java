@@ -3,7 +3,6 @@ package pairmatching;
 import java.util.Arrays;
 
 public enum Level {
-    NONE("없음", 0, 0),
     LEVEL_1("레벨1", 1, 3),
     LEVEL_2("레벨2", 2, 3),
     LEVEL_3("레벨3", 3, 0),
@@ -36,6 +35,6 @@ public enum Level {
         return Arrays.stream(values())
                 .filter(level -> level.levelName.equals(levelName))
                 .findFirst()
-                .orElse(NONE);
+                .orElseThrow(() -> new IllegalArgumentException("[ERROR] 과정, 레벨, 미션을 잘못 입력하셨습니다. 다시 입력해주세요."));
     }
 }

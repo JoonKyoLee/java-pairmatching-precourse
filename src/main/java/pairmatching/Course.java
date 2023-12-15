@@ -3,7 +3,6 @@ package pairmatching;
 import java.util.Arrays;
 
 public enum Course {
-    NONE("없음", 0),
     BACKEND("백엔드", 1),
     FRONTEND("프론트엔드", 2);
 
@@ -27,6 +26,6 @@ public enum Course {
         return Arrays.stream(values())
                 .filter(course -> course.courseName.equals(courseName))
                 .findFirst()
-                .orElse(NONE);
+                .orElseThrow(() -> new IllegalArgumentException("[ERROR] 과정, 레벨, 미션을 잘못 입력하셨습니다. 다시 입력해주세요."));
     }
 }
