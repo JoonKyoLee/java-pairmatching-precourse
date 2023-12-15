@@ -3,13 +3,13 @@ package pairmatching;
 import java.util.Arrays;
 
 public enum Course {
-    BACKEND("백엔드", 1),
-    FRONTEND("프론트엔드", 2);
+    BACKEND("백엔드", "1"),
+    FRONTEND("프론트엔드", "2");
 
     private final String courseName;
-    private final int index;
+    private final String index;
 
-    Course(String courseName, int index) {
+    Course(String courseName, String index) {
         this.courseName = courseName;
         this.index = index;
     }
@@ -18,7 +18,7 @@ public enum Course {
         return courseName;
     }
 
-    public int getIndex() {
+    public String getIndex() {
         return index;
     }
 

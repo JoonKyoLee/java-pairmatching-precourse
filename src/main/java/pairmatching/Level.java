@@ -3,17 +3,17 @@ package pairmatching;
 import java.util.Arrays;
 
 public enum Level {
-    LEVEL_1("레벨1", 1, 3),
-    LEVEL_2("레벨2", 2, 3),
-    LEVEL_3("레벨3", 3, 0),
-    LEVEL_4("레벨4", 4, 2),
-    LEVEL_5("레벨5", 5, 0);
+    LEVEL_1("레벨1", "1", 3),
+    LEVEL_2("레벨2", "2", 3),
+    LEVEL_3("레벨3", "3", 0),
+    LEVEL_4("레벨4", "4", 2),
+    LEVEL_5("레벨5", "5", 0);
 
     private final String levelName;
-    private final int index;
+    private final String index;
     private final int missionNum;
 
-    Level(String levelName, int index, int missionNum) {
+    Level(String levelName, String index, int missionNum) {
         this.levelName = levelName;
         this.index = index;
         this.missionNum = missionNum;
@@ -23,7 +23,7 @@ public enum Level {
         return levelName;
     }
 
-    public int getIndex() {
+    public String getIndex() {
         return index;
     }
 
