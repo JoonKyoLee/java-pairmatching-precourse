@@ -1,6 +1,9 @@
 package pairmatching;
 
+import java.util.Arrays;
+
 public enum Course {
+    NONE("없음", 0),
     BACKEND("백엔드", 1),
     FRONTEND("프론트엔드", 2);
 
@@ -18,5 +21,12 @@ public enum Course {
 
     public int getIndex() {
         return index;
+    }
+
+    public static Course getCourse(String courseName) {
+        return Arrays.stream(values())
+                .filter(course -> course.courseName.equals(courseName))
+                .findFirst()
+                .orElse(NONE);
     }
 }
